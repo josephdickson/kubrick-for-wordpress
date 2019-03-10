@@ -6,15 +6,22 @@
 
 $content_width = 450;
 
-automatic_feed_links();
+add_theme_support( 'automatic-feed-links' );
 
-if ( function_exists('register_sidebar') ) {
-	register_sidebar(array(
+/* update sidebar */
+add_action('widgets_init', 'default_theme_widgets_init' );
+
+function default_theme_widgets_init(){
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'default_theme' ),
+		'id'            => 'sidebar-1',
+		'description'   => '',
+		'class'         => '',
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h2 class="widgettitle">',
-		'after_title' => '</h2>',
-	));
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widget-sidebar-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 
 /** @ignore */
@@ -371,7 +378,7 @@ function kubrick_theme_page_head() {
 }
 
 function kubrick_theme_page() {
-	if ( isset( $_REQUEST['saved'] ) ) echo '<div id="message" class="updated fade"><p><strong>'.__('Options saved.').'</strong></p></div>';
+	if ( isset( $_REQUEST['saved'] ) ) echo '<div id="message" class="updated"><p><strong>'.__('Options saved.').'</strong></p></div>';
 ?>
 <div class='wrap'>
 	<h2><?php _e('Customize Header'); ?></h2>
@@ -431,3 +438,7 @@ function kubrick_theme_page() {
 	</div>
 </div>
 <?php } ?>
+
+<?php
+// Enqueue CSS and JS
+require_once( __DIR__ . '/lib/enqueue-assets.php' );

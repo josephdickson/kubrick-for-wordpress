@@ -1,11 +1,12 @@
 /*
-Theme Name: WordPress Default
+Theme Name: Upgrading Kubrick for Gutenberg
 Theme URI: http://wordpress.org/
-Description: The default WordPress theme that graced version 1.5 to version 2.9, based on the famous <a href="http://binarybonsai.com/kubrick/">Kubrick</a> by <a href="Michael Heilmann">http://binarybonsai.com</a>. Theme adapted for WordCamp Santa Clarita Presentation April 6, 2019.
-Version: 0.1 
+Description: Forked from the default WordPress theme that graced version 1.5 to version 2.9, based on the famous <a href="http://binarybonsai.com/kubrick/">Kubrick</a> by <a href="Michael Heilmann">http://binarybonsai.com</a>. Theme adapted for WordCamp Santa Clarita Presentation April 6, 2019.
+Version: 0.1
 Author: Joseph Dickson
-Author URI: http://binarybonsai.com/
-Tags: blue, custom header, fixed width, two columns, widgets
+Author URI: https://joseph-dickson.com/
+Tags: blue, silver, white, two-columns, fixed-width, right-sidebar, fixed-width, custom-header, threaded-comments, sticky-post, rtl-language-support, translation-ready
+Text Domain: default-theme-gutenberg
 
 	Kubrick v1.5
 	 http://binarybonsai.com/kubrick/
@@ -29,8 +30,15 @@ body {
 	text-align: center;
 	}
 
+#container {
+	margin: 0 0.9em;
+	background: white;
+	border: 1px solid #a2a2a2;
+	border-width: 0 1px;
+}
+
 #page {
-	background-color: white;
+	background-color: #e7e7e7;
 	border: 1px solid #959596;
 	text-align: left;
 	}
@@ -47,6 +55,7 @@ body {
 
 #content {
 	font-size: 1.2em;
+
 	}
 
 .widecolumn .entry p {
@@ -127,6 +136,12 @@ h1, h1 a, h1 a:hover, h1 a:visited, #headerimg .description {
 	text-decoration: none;
 	color: white;
 	}
+
+.entry h1 {
+	color: #333;
+	padding-top: 0;
+	line-height: 1.4;
+}
 
 h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
 	color: #333;
@@ -242,7 +257,6 @@ body {
 	}
 
 #page {
-	background-color: white;
 	margin: 20px auto;
 	padding: 0;
 	width: 760px;
@@ -545,7 +559,6 @@ select {
 	margin: 15px 0 10px;
 	padding: 5px 5px 10px 10px;
 	list-style: none;
-
 	}
 .commentlist li ul li { 
 	margin-right: -5px;
